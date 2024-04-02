@@ -10,12 +10,12 @@ class SignupTest(TestCase):
     def test_signup_by_url(self):
         response = self.client.get(reverse('signup'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, template_name='registration/signup.html')
+        self.assertTemplateUsed(response, template_name='account/signup.html')
 
     def test_signup_url(self):
         response = self.client.get('/accounts/signup/')
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, template_name='registration/signup.html')
+        self.assertTemplateUsed(response, template_name='account/signup.html')
 
     def test_signup_form(self):
         response = self.client.post(reverse('signup'), data={
